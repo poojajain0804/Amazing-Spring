@@ -8,9 +8,13 @@
            https://www.springframework.org/schema/context/spring-context.xsd">
 
 	<bean id= "busBean" class= "com.poojajain0804.Bus">
+		<constructor-arg ref = "disOfferBean"></constructor-arg>
 	</bean>
 	
 	<bean id= "carBean" class= "com.poojajain0804.Car"> 
+		<property name="discountOffer" ref="disOfferBean"></property>
 	</bean>
+	
+	<bean id = "disOfferBean" class = "com.poojajain0804.DiscountOfferImpl"></bean>
 	
 </beans>
