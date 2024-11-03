@@ -22,8 +22,11 @@ public class Amazing {
 		System.out.println("Now lets play with annotation");
 		
 		Vehical vehicalBean = context.getBean("bike", Vehical.class);
+		Vehical bike1 = context.getBean("bike", Vehical.class);
 		System.out.println(vehicalBean.getMileage());
 		System.out.println(vehicalBean.getDiscountOffer());
+		System.out.println("are two bean same now ");
+		System.out.println(bike1==vehicalBean);
 	}
 
 }
