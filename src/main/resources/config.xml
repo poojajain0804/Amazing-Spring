@@ -17,6 +17,15 @@
            http://www.springframework.org/schema/jdbc 
            https://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
 
+
+	<context:component-scan base-package="com.poojajain0804"></context:component-scan>
+
+	<!-- 
+	
+	
+	XML Configuration based bean creation 
+	
+	
 	<context:property-placeholder
 		location="applicationProps.properties" />
 	<bean id="busBean" class="com.poojajain0804.Bus">
@@ -30,6 +39,7 @@
 	</bean>
 
 	<bean id="disOfferBean"
-		class="com.poojajain0804.DiscountOfferImpl"></bean>
+		class="com.poojajain0804.DiscountOfferImpl"></bean> 
+		-->
 
 </beans>

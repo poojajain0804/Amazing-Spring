@@ -1,5 +1,8 @@
 package com.poojajain0804;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class DiscountOfferImpl implements DiscountOffer {
 
 	@Override

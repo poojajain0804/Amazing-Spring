@@ -8,11 +8,20 @@ public class Amazing {
 
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
 		
-		Vehical vehicalBean = context.getBean("busBean", Vehical.class);
-		System.out.println(vehicalBean.getMileage());
-		System.out.println(vehicalBean.getDiscountOffer());
+		/*
+		 * Vehical vehicalBean = context.getBean("busBean", Vehical.class);
+		 * System.out.println(vehicalBean.getMileage());
+		 * System.out.println(vehicalBean.getDiscountOffer());
+		 * 
+		 * vehicalBean = context.getBean("carBean", Vehical.class);
+		 * System.out.println(vehicalBean.getMileage());
+		 * System.out.println(vehicalBean.getDiscountOffer());
+		 */
 		
-		vehicalBean = context.getBean("carBean", Vehical.class);
+		
+		System.out.println("Now lets play with annotation");
+		
+		Vehical vehicalBean = context.getBean("bike", Vehical.class);
 		System.out.println(vehicalBean.getMileage());
 		System.out.println(vehicalBean.getDiscountOffer());
 	}
