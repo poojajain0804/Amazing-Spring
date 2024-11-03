@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:aop="http://www.springframework.org/schema/aop"
-       xmlns:tx="http://www.springframework.org/schema/tx"
-       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
-       xsi:schemaLocation="
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="
            http://www.springframework.org/schema/beans 
            https://www.springframework.org/schema/beans/spring-beans.xsd
            http://www.springframework.org/schema/context 
@@ -18,28 +18,16 @@
            https://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
 
 
-	<context:component-scan base-package="com.poojajain0804"></context:component-scan>
-
-	<!-- 
-	
-	
-	XML Configuration based bean creation 
-	
-	
+	<context:component-scan
+		base-package="com.poojajain0804"></context:component-scan>
 	<context:property-placeholder
 		location="applicationProps.properties" />
-	<bean id="busBean" class="com.poojajain0804.Bus">
-		<constructor-arg ref="disOfferBean"></constructor-arg>
-		<property name="busNumberOfWheels" value="${bus.numberOfWheels}"></property>
-	</bean>
-
-	<bean id="carBean" class="com.poojajain0804.Car">
-		<property name="discountOffer" ref="disOfferBean"></property>
-		<property name="carNumberOfWheels" value="4"></property>
-	</bean>
-
-	<bean id="disOfferBean"
-		class="com.poojajain0804.DiscountOfferImpl"></bean> 
-		-->
+		
+		
+	<!-- XML Configuration based bean creation <bean id="busBean" class="com.poojajain0804.Bus"> 
+		<constructor-arg ref="disOfferBean"></constructor-arg> <property name="busNumberOfWheels" 
+		value="${bus.numberOfWheels}"></property> </bean> <bean id="carBean" class="com.poojajain0804.Car"> 
+		<property name="discountOffer" ref="disOfferBean"></property> <property name="carNumberOfWheels" 
+		value="4"></property> </bean> <bean id="disOfferBean" class="com.poojajain0804.DiscountOfferImpl"></bean> -->
 
 </beans>
