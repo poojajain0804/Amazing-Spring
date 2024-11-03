@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
        xsi:schemaLocation="
            http://www.springframework.org/schema/beans 
            https://www.springframework.org/schema/beans/spring-beans.xsd
            http://www.springframework.org/schema/context 
-           https://www.springframework.org/schema/context/spring-context.xsd">
+           https://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/aop 
+           https://www.springframework.org/schema/aop/spring-aop.xsd
+           http://www.springframework.org/schema/tx 
+           https://www.springframework.org/schema/tx/spring-tx.xsd
+           http://www.springframework.org/schema/jdbc 
+           https://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
 
-	<bean id= "busBean" class= "com.poojajain0804.Bus">
-		<constructor-arg ref = "disOfferBean"></constructor-arg>
+	<context:property-placeholder
+		location="applicationProps.properties" />
+	<bean id="busBean" class="com.poojajain0804.Bus">
+		<constructor-arg ref="disOfferBean"></constructor-arg>
+		<property name="busNumberOfWheels" value="${bus.numberOfWheels}"></property>
 	</bean>
-	
-	<bean id= "carBean" class= "com.poojajain0804.Car"> 
+
+	<bean id="carBean" class="com.poojajain0804.Car">
 		<property name="discountOffer" ref="disOfferBean"></property>
+		<property name="carNumberOfWheels" value="4"></property>
 	</bean>
-	
-	<bean id = "disOfferBean" class = "com.poojajain0804.DiscountOfferImpl"></bean>
-	
+
+	<bean id="disOfferBean"
+		class="com.poojajain0804.DiscountOfferImpl"></bean>
+
 </beans>

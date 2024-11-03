@@ -2,7 +2,8 @@ package com.poojajain0804;
 
 public class Bus implements Vehical {
 
-	public DiscountOffer discountOffer;
+	private DiscountOffer discountOffer;
+	private int busNumberOfWheels;
 
 	/**
 	 * Constructor Dependency. 
@@ -14,7 +15,15 @@ public class Bus implements Vehical {
 	
 	@Override
 	public String getMileage() {
-		return "Bus Mileage is - 20KMPL";
+		return "Bus Mileage is - 20KMPL on "+ busNumberOfWheels +" wheels.";
+	}
+
+	public int getBusNumberOfWheels() {
+		return busNumberOfWheels;
+	}
+
+	public void setBusNumberOfWheels(int busNumberOfWheels) {
+		this.busNumberOfWheels = busNumberOfWheels;
 	}
 
 	@Override
